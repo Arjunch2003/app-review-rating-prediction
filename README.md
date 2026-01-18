@@ -1,4 +1,4 @@
-# Google Play Store App Review Rating Prediction
+# App Review Rating Prediction
 
 ## 📋 Problem Statement
 
@@ -12,12 +12,12 @@ Predict the star rating (1-5) of Google Play Store application reviews based on 
 
 ### Class Distribution (Training Data)
 | Rating | Count | Percentage |
-|--------|-------|-----------|
-| 5-star | 2,923 | 51.34% |
-| 1-star | 1,788 | 31.41% |
-| 4-star | 611 | 10.73% |
-| 3-star | 217 | 3.81% |
-| 2-star | 154 | 2.71% |
+|--------|-------|------------|
+| 5-star | 2,923 |   51.34%   |
+| 1-star | 1,788 |   31.41%   |
+| 4-star | 611   |   10.73%   |
+| 3-star | 217   |    3.81%   |
+| 2-star | 154   |    2.71%   |
 
 ![Rating Distribution](https://via.placeholder.com/600x250?text=Rating+Distribution+Chart)
 
@@ -33,7 +33,6 @@ Implemented a comprehensive text cleaning pipeline:
 ```python
 TextPreprocessor
 ├── Convert to lowercase
-├── Remove URLs & HTML tags
 ├── Remove special characters & numbers
 ├── Normalize whitespace
 ├── Tokenization (whitespace-based)
@@ -64,17 +63,17 @@ TextPreprocessor
 #### Nested Cross-Validation Framework
 ```
 ┌─ Outer CV (5-Fold Stratified) ────────────────────┐
-│  Provides unbiased performance estimates           │
-│                                                    │
-│  ├─ Inner CV (3-Fold Stratified) ──────────┐     │
-│  │  GridSearchCV for Hyperparameter Tuning │     │
-│  │                                         │     │
-│  │  • LogisticRegression (C: [0.01,1,10]) │     │
-│  │  • RandomForest (8 hyperparameters)    │     │
-│  └─────────────────────────────────────────┘     │
-│                                                    │
-│  └─ Evaluate on outer fold test set              │
-└────────────────────────────────────────────────────┘
+│  Provides unbiased performance estimates          │
+│                                                   │
+│  ├─ Inner CV (3-Fold Stratified) ──────────┐      │
+│  │  GridSearchCV for Hyperparameter Tuning │      │
+│  │                                         │      │
+│  │  • LogisticRegression (C: [0.01,1,10])  │      │
+│  │  • RandomForest (8 hyperparameters)     │      │
+│  └─────────────────────────────────────────┘      │
+│                                                   │
+│  └─ Evaluate on outer fold test set               │
+└───────────────────────────────────────────────────┘
 ```
 
 **Why Nested CV?**
@@ -176,18 +175,9 @@ python -c "import nltk; nltk.download('wordnet'); nltk.download('stopwords')"
 #### Option A: Run Jupyter Notebook (Full Analysis)
 ```bash
 cd src
-jupyter notebook model_training.ipynb
+jupyter notebook appratting.ipynb
 ```
 This provides step-by-step analysis with visualizations.
-
-#### Option B: Run Python Scripts (Direct Training)
-```bash
-# Train model and validate
-python src/train.py
-
-# Generate test predictions
-python src/predict.py --input data/test.csv --output predictions.csv
-```
 
 ### Step 5: Verify Output
 ```bash
