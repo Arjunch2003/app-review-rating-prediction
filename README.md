@@ -19,7 +19,7 @@ Predict the star rating (1-5) of Google Play Store application reviews based on 
 | 3-star | 217   |    3.81%   |
 | 2-star | 154   |    2.71%   |
 
-![Rating Distribution](https://via.placeholder.com/600x250?text=Rating+Distribution+Chart)
+![Rating Distribution](images/01_rating_distribution.png)
 
 **Challenge**: Severe class imbalance requiring specialized handling techniques.
 
@@ -92,7 +92,7 @@ TextPreprocessor
 | Logistic Regression | 85.63% | 0.8655 | 0.8186 | 0.6606 ± 0.0064 |
 | **Random Forest** ⭐ | 75.09% | 0.7660 | 0.6799 | **0.6745 ± 0.0067** |
 
-![Logistic Regression Confusion Matrix](https://via.placeholder.com/600x500?text=Logistic+Regression+Confusion+Matrix)
+![Logistic Regression Confusion Matrix](images/confusion_matrix_logistic_regression.png)
 
 ### Best Model: Random Forest
 **Selected based on Outer CV F1-Score (most reliable estimate)**
@@ -115,7 +115,7 @@ TextPreprocessor
 | 4-star | 0.3412 | 0.5679 | 0.4263 | 611 |
 | 5-star | 0.8570 | 0.7277 | 0.7870 | 2,923 |
 
-![Confusion Matrix - Random Forest](https://via.placeholder.com/600x500?text=Random+Forest+Confusion+Matrix)
+![Confusion Matrix - Random Forest](images/confusion_matrix_random_forest.png)
 
 ---
 
