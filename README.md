@@ -309,18 +309,6 @@ Weighted F1 = Σ(weight_i × F1_i) where weight_i = support_i / total_samples
 
 ---
 
-## 📧 Submission Format
-
-**File**: `predictions.csv`
-```csv
-id,Star Rating
-1,5
-2,4
-3,1
-...
-1424,5
-```
-
 **Requirements**:
 - Exactly 1,424 rows (test set size)
 - Two columns: id and Star Rating
@@ -332,8 +320,7 @@ id,Star Rating
 ## 🔄 Reproduction Steps
 
 1. Ensure all dependencies installed: `pip install -r requirements.txt`
-2. Run full training pipeline: `python src/train.py`
-3. Generate test predictions: `python src/predict.py`
+2. Run ipynb file
 4. Submit `predictions.csv` with 1,424 predictions
 
 ---
