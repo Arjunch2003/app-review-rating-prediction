@@ -1,6 +1,6 @@
 # App Review Rating Prediction
 
-## 📋 Problem Statement
+## Problem Statement
 
 Predict the star rating (1-5) of Google Play Store application reviews based on review text and related attributes. This is a **multi-class classification problem** with a highly imbalanced dataset.
 
@@ -25,7 +25,7 @@ Predict the star rating (1-5) of Google Play Store application reviews based on 
 
 ---
 
-## 🔧 Approach & Methodology
+## Approach & Methodology
 
 ### 1. Text Preprocessing
 Implemented a comprehensive text cleaning pipeline:
@@ -83,14 +83,14 @@ TextPreprocessor
 
 ---
 
-## 🤖 Models & Results
+## Models & Results
 
 ### Model Comparison
 
 | Model | Accuracy | Weighted F1 | Macro F1 | Outer CV F1 |
 |-------|----------|------------|----------|------------|
-| Logistic Regression | 85.63% | 0.8655 | 0.8186 | 0.6606 ± 0.0064 |
-| **Random Forest** ⭐ | 75.09% | 0.7660 | 0.6799 | **0.6745 ± 0.0067** |
+| Logistic Regression | 85.63% | 0.8655 | 0.8186 | 0.6606 ± 0.0064     |
+| **Random Forest**   | 75.09% | 0.7660 | 0.6799 | **0.6745 ± 0.0067** |
 
 ![Logistic Regression Confusion Matrix](images/confusion_matrix_logistic_regression.png)
 
@@ -109,11 +109,11 @@ TextPreprocessor
 #### Per-Class Performance
 | Rating | Precision | Recall | F1-Score | Support |
 |--------|-----------|--------|----------|---------|
-| 1-star | 0.8964 | 0.8468 | 0.8709 | 1,788 |
-| 2-star | 0.5647 | 0.8506 | 0.6788 | 154 |
-| 3-star | 0.5714 | 0.7189 | 0.6367 | 217 |
-| 4-star | 0.3412 | 0.5679 | 0.4263 | 611 |
-| 5-star | 0.8570 | 0.7277 | 0.7870 | 2,923 |
+| 1-star |   0.8964  | 0.8468 |  0.8709  |  1,788  |
+| 2-star |   0.5647  | 0.8506 |  0.6788  |   154   |
+| 3-star |   0.5714  | 0.7189 |  0.6367  |   217   |
+| 4-star |   0.3412  | 0.5679 |  0.4263  |   611   |
+| 5-star |   0.8570  | 0.7277 |  0.7870  |  2,923  |
 
 ![Confusion Matrix - Random Forest](images/confusion_matrix_random_forest.png)
 
@@ -193,9 +193,9 @@ head predictions.csv
 
 ---
 
-## 📝 Task Checklist
+## Task Checklist
 
-✅ **Text Preprocessing**
+**Text Preprocessing**
 - Lowercase conversion
 - URL & HTML removal
 - Special character removal
@@ -204,33 +204,33 @@ head predictions.csv
 - Stopword removal
 - Lemmatization
 
-✅ **Feature Extraction**
+**Feature Extraction**
 - TF-IDF vectorization
 - Unigram & bigram features
 - Document frequency filtering
 - Dimensionality reduction (5000 features)
 
-✅ **Model Training**
+**Model Training**
 - LogisticRegression with regularization
 - RandomForest ensemble classifier
 - Class weight balancing for imbalanced data
 
-✅ **Internal Validation**
+**Internal Validation**
 - Nested cross-validation (5-fold outer, 3-fold inner)
 - GridSearchCV for hyperparameter tuning
 - Stratified folds for consistent distributions
 
-✅ **Hyperparameter Tuning**
+**Hyperparameter Tuning**
 - LogisticRegression: C ∈ [0.01, 0.1, 1, 10]
 - RandomForest: 8 hyperparameters (n_estimators, max_depth, etc.)
 
-✅ **Test Predictions**
+**Test Predictions**
 - Generate predictions.csv with proper format
 - No modification to test dataset structure
 
 ---
 
-## 🔑 Key Insights
+## Key Insights
 
 ### Model Selection Rationale
 - **LogisticRegression**: Higher training accuracy (85.63%) but overfits (Outer CV: 0.6606)
@@ -249,7 +249,7 @@ head predictions.csv
 
 ---
 
-## 📂 Input/Output Specifications
+## Input/Output Specifications
 
 ### Training Data (train.csv)
 ```
@@ -285,7 +285,7 @@ See `requirements.txt` for complete list:
 
 ---
 
-## 📌 Important Notes
+## Important Notes
 
 1. **Reproducibility**: All models use `random_state=42`
 2. **Class Imbalance**: Handled via `class_weight="balanced"` + weighted F1
@@ -295,7 +295,7 @@ See `requirements.txt` for complete list:
 
 ---
 
-## 🎯 Evaluation Metric: Weighted F1-Score
+## Evaluation Metric: Weighted F1-Score
 
 **Why Weighted F1?**
 - Accounts for class imbalance automatically
@@ -317,13 +317,10 @@ Weighted F1 = Σ(weight_i × F1_i) where weight_i = support_i / total_samples
 
 ---
 
-## 🔄 Reproduction Steps
+## Reproduction Steps
 
 1. Ensure all dependencies installed: `pip install -r requirements.txt`
 2. Run ipynb file
 4. Submit `predictions.csv` with 1,424 predictions
 
 ---
-
-**Status**: ✅ Complete & Ready for Submission  
-**Last Updated**: January 2025
