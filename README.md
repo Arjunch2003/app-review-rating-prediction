@@ -119,7 +119,7 @@ TextPreprocessor
 
 ---
 
-## 📊 Project Structure
+## Project Structure
 
 ```
 assignment/
@@ -148,7 +148,7 @@ assignment/
 
 ---
 
-## 🚀 Installation & Execution
+## Installation & Execution
 
 ### Prerequisites
 - Python 3.8+
