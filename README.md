@@ -273,7 +273,7 @@ Format: One prediction per row, matching test.csv row order
 
 ---
 
-## 🛠️ Dependencies
+## Dependencies
 
 See `requirements.txt` for complete list:
 - **Data Processing**: pandas, numpy
